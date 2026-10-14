@@ -1,1 +1,2 @@
-dd
+def fetch():
+    return True
