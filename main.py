@@ -1,9 +1,7 @@
 from db.db import get_connection
+from repository.users_repository import get_all_users
 
 with get_connection() as conn:
-    with conn.cursor() as cursor:
-        cursor.execute("SELECT * from users")
-        users = cursor.fetchall()
+    users = get_all_users(conn)
+    print(users)
 
-print(users)
-print(users[0])
